@@ -5,16 +5,36 @@
 // Y.one('document').detach()
 // Y.all('*').detach()
 
+let documentEvents = [
+  "contextmenu",
+  "dragstart",
+  "selectstart",
+  "cut",
+  "copy",
+  "paste",
+];
+let bodyEvents = ["mousedown", "mouseup"];
+let keyboardEvents = ["keypress", "keyup", "keydown"];
+
+// Event capturing
+let events = [...documentEvents, ...bodyEvents, ...keyboardEvents];
+events.forEach((event) => {
+  window.addEventListener(
+    event,
+    (e) => {
+      e.stopPropagation();
+    },
+    true
+  );
+});
+
 // Precise
-let documentEvents = ['contextmenu', 'dragstart', 'selectstart', 'cut', 'copy', 'paste']
-let bodyEvents = ['mousedown', 'mouseup']
+// documentEvents.forEach((e) => {
+//   Y.one("document").detach(e);
+// });
 
-documentEvents.forEach((e) => {
-  Y.one('document').detach(e)
-})
+// bodyEvents.forEach((e) => {
+//   Y.one("body").detach(e);
+// });
 
-bodyEvents.forEach((e) => {
-  Y.one('body').detach(e)
-})
-
-Y.all("*").detach('key')
+// Y.all("*").detach("key");
