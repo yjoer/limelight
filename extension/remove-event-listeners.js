@@ -16,12 +16,14 @@ let mouseEvents = ["mousedown", "mouseup"];
 // Y.all('*').detach()
 
 // Precise
-documentEvents.forEach((e) => {
-  Y.one("document").detach(e);
-});
+if (typeof Y !== "undefined") {
+  documentEvents.forEach((e) => {
+    Y.one("document").detach(e);
+  });
 
-mouseEvents.forEach((e) => {
-  Y.one("body").detach(e);
-});
+  mouseEvents.forEach((e) => {
+    Y.one("body").detach(e);
+  });
 
-Y.all("*").detach("key");
+  Y.all("*").detach("key");
+}
