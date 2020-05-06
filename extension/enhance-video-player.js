@@ -1,3 +1,11 @@
+const showPlaybackRateControl = (player) => {
+  let menuButton = player.controlBar.playbackRateMenuButton;
+  let opts = menuButton.options_.playerOptions;
+
+  opts.playbackRates = [0.5, 1, 1.1, 1.25, 1.5, 2];
+  menuButton.updateVisibility();
+};
+
 const bindKeyboardEvent = (player) => {
   player.on("keydown", (event) => {
     let seekTime;
@@ -27,6 +35,8 @@ const enhanceVideoPlayer = () => {
   }
 
   for (let [, player] of Object.entries(vjs.players)) {
+    showPlaybackRateControl(player);
+
     bindKeyboardEvent(player);
   }
 };
