@@ -21,7 +21,11 @@ const bindKeyboardEvent = (player) => {
 
       player.pause();
       player.currentTime(seekTime);
-      player.play().then(null, (err) => {});
+
+      let played = player.play();
+      if (played != null && typeof played.then === "function") {
+        played.then(null, (err) => {});
+      }
     }
   });
 };
