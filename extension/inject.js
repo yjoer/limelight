@@ -1,16 +1,24 @@
+const createScript = (scriptFile) => {
+  let t0 = performance.now();
+  let script = document.createElement("script");
+
+  script.src = chrome.runtime.getURL(scriptFile);
+
+  script.onload = () => {
+    script.remove();
+    let t1 = performance.now();
+    console.log(`Script (${scriptFile}) loaded in ${t1 - t0} milliseconds`);
+  }
+
+  (document.head || document.documentElement).appendChild(script);
+}
+
 const inject = () => {
-  console.log("Start");
-  var t0 = performance.now();
+  let scripts = ["remove-event-listeners.js", "enhance-video-player.js"];
 
-  var s = document.createElement("script");
-  s.src = chrome.runtime.getURL("remove-event-listeners.js");
-  s.onload = function () {
-    this.remove();
-    var t1 = performance.now();
-    console.log(`End: ${t1 - t0} milliseconds`);
-  };
-
-  (document.head || document.documentElement).appendChild(s);
+  for (let script of scripts) {
+    createScript(script);
+  }
 };
 
 window.addEventListener("load", inject);
