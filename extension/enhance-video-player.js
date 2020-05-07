@@ -32,6 +32,11 @@ const bindKeyboardEvent = (player) => {
 
 const enhanceVideoPlayer = () => {
   const moduleName = "media_videojs/video-lazy";
+
+  if (typeof require === "undefined") {
+    return;
+  }
+
   const vjs = require.s.contexts._.defined[moduleName];
 
   if (typeof vjs === "undefined") {
