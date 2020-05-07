@@ -18,7 +18,8 @@
       "matches": [
         "https://elearning.usm.my/*",
         "https://sandbox.moodledemo.net/*",
-        "http://localhost/mod/quiz/*"],
+        "http://localhost/mod/quiz/*"
+      ],
       "js": ["inject.js"]
     }
   ],
