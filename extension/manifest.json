@@ -1,7 +1,7 @@
 {
   "name": "Limelight",
   "manifest_version": 2,
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "icons": {
     "16": "icons/icon_16.png",
@@ -15,7 +15,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://elearning.usm.my/*", "http://localhost/mod/quiz/*"],
+      "matches": [
+        "https://elearning.usm.my/*",
+        "https://sandbox.moodledemo.net/*",
+        "http://localhost/mod/quiz/*"],
       "js": ["inject.js"]
     }
   ],
