@@ -21,8 +21,73 @@ body {
 
 .settings__item-text {
   font-size: 0.875rem;
+  width: 220px;
 }
 
 .settings__item-switch {
   margin-left: auto;
+}
+
+.switch {
+  display: block;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch__slider {
+  background-color: #6d758d;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 20px;
+  width: 48px;
+  position: relative;
+}
+
+.switch__slider:hover {
+  background-color: #9fa6bf;
+}
+
+.switch__slider::before {
+  background-color: white;
+  border-radius: 8px;
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 16px;
+  width: 16px;
+  transition: left 0.2s;
+}
+
+.switch__slider::after {
+  color: #fff;
+  content: "OFF";
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 16px;
+  margin: 2px 5px;
+  text-align: center;
+  width: 24px;
+}
+
+input:checked ~ .switch__slider {
+  background-color: #11a683;
+  flex-direction: row;
+}
+
+input:checked ~ .switch__slider:hover {
+  background-color: #15c39a;
+}
+
+input:checked ~ .switch__slider::before {
+  left: 30px;
+}
+
+input:checked ~ .switch__slider::after {
+  content: "ON";
 }
