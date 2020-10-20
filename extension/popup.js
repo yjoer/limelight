@@ -3,5 +3,5 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
   let url = new URL(currentTab.url);
 
   let elements = document.getElementsByClassName("settings__item-text");
-  elements[0].innerHTML += `<b>${url.hostname}</b>`;
+  elements[0].innerHTML += ` <b>${url.hostname}</b>`;
 });
