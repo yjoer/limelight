@@ -1,0 +1,28 @@
+body {
+  min-width: 348px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.header {
+  padding: 16px 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.settings__item {
+  display: flex;
+  margin: 0 32px;
+  padding: 16px 0;
+}
+
+.settings__item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.settings__item-text {
+  font-size: 0.875rem;
+}
+
+.settings__item-switch {
+  margin-left: auto;
+}

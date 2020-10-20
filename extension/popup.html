@@ -1,6 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Limelight</title>
+    <link href="popup.css" rel="stylesheet" />
+  </head>
   <body>
-    <button id="toggle">Off</button>
+    <div class="header">Limelight</div>
+    <div class="settings">
+      <div class="settings__item">
+        <div class="settings__item-text">Injecting scripts on</div>
+        <div class="settings__item-switch">
+          <input type="checkbox" />
+        </div>
+      </div>
+      <div class="settings__item">
+        <div class="settings__item-text">
+          Circumvent text selection restriction
+        </div>
+        <div class="settings__item-switch">
+          <input type="checkbox" />
+        </div>
+      </div>
+      <div class="settings__item">
+        <div class="settings__item-text">
+          Circumvent cut, copy and paste restrictions
+        </div>
+        <div class="settings__item-switch">
+          <input type="checkbox" />
+        </div>
+      </div>
+      <div class="settings__item">
+        <div class="settings__item-text">
+          Enhance video players with multiple playback rates and keyboard
+          shortcuts
+        </div>
+        <div class="settings__item-switch">
+          <input type="checkbox" />
+        </div>
+      </div>
+    </div>
   </body>
   <script type="text/javascript" src="popup.js"></script>
 </html>
