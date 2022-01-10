@@ -8,13 +8,17 @@ const createScript = (scriptFile) => {
     script.remove();
     let t1 = performance.now();
     console.log(`Script (${scriptFile}) loaded in ${t1 - t0} milliseconds`);
-  }
+  };
 
   (document.head || document.documentElement).appendChild(script);
-}
+};
 
 const inject = () => {
-  let scripts = ["remove-event-listeners.js", "enhance-video-player.js"];
+  let scripts = [
+    "remove-event-listeners.js",
+    "enhance-video-player.js",
+    "add-question-number.js",
+  ];
 
   for (let script of scripts) {
     createScript(script);
