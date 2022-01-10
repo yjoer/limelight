@@ -1,6 +1,6 @@
 const buttonList = document.querySelector("#mod_quiz_navblock .qn_buttons");
 
-for (const child of buttonList.children) {
+for (const child of buttonList?.children ?? []) {
   if (!child.id) {
     continue;
   }
