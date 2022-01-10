@@ -16,6 +16,7 @@ for (const child of buttonList?.children ?? []) {
   const newNode = document.createElement("div");
   newNode.innerHTML = `(${questionNumber})`;
   newNode.style.color = "hsla(0, 0%, 0%, 0.56)";
+  newNode.style.position = "relative";
 
   for (const childNode of child.childNodes) {
     if (childNode.nodeType !== Node.TEXT_NODE) {
