@@ -13,9 +13,17 @@ for (const child of buttonList?.children ?? []) {
 
   const questionNumber = match[2];
 
+  let color = "hsla(0, 0%, 0%, 0.64)";
+  if (
+    child.classList.contains("answersaved") ||
+    child.classList.contains("complete")
+  ) {
+    color = "hsla(0, 100%, 100%, 1)";
+  }
+
   const newNode = document.createElement("div");
   newNode.innerHTML = `(${questionNumber})`;
-  newNode.style.color = "hsla(0, 0%, 0%, 0.56)";
+  newNode.style.color = color;
   newNode.style.position = "relative";
 
   for (const childNode of child.childNodes) {
